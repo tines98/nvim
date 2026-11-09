@@ -14,7 +14,7 @@ M.org_mapper = {
   ["personal"] = "\u{f415} Personal",
   ["bekk"] = "\u{f491} Bekk",
   [".config"] = "\u{e615} Config",
-  ["nasjonalarkivet"] = "\u{f187} Nasjonalarkivet",
+  ["teoria"] = "\u{f187} Teoria",
   ["etc"] = "\u{f313} NixOS",
   default = "\u{f128} UNKNOWN",
 }
@@ -24,7 +24,7 @@ M.org_colors = {
   ["bekk"] = "OrgBekk",
   [".config"] = "OrgConfig",
   ["etc"] = "OrgNixOS",
-  ["nasjonalarkivet"] = "OrgNasjonalarkivet",
+  ["teoria"] = "OrgTeoria",
   default = "OrgDefault",
 }
 

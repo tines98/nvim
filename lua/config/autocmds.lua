@@ -18,7 +18,11 @@
 vim.api.nvim_create_autocmd({ "DirChanged" }, {
   callback = function()
     local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-    vim.opt.titlestring = " " .. project_name
+    -- Format the project name, replacing dashed with spaces and capitalizing the first letter of each word
+    local project_name_formatted = project_name:gsub("%-", " "):gsub("(%a)([%w_']*)", function(first, rest)
+      return first:upper() .. rest
+    end)
+    vim.opt.titlestring = " " .. project_name_formatted
     vim.opt.title = true
   end,
 })

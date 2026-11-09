@@ -13,9 +13,9 @@ return {
     })
 
     -- Organization Colors
-    vim.api.nvim_set_hl(0, "OrgPersonal", { fg = "#a970c7" })
-    vim.api.nvim_set_hl(0, "OrgBekk", { fg = "#C93D36" })
-    vim.api.nvim_set_hl(0, "OrgTeoria", { fg = "#000c85" })
+    vim.api.nvim_set_hl(0, "OrgPersonal", { fg = "#7D6557" })
+    vim.api.nvim_set_hl(0, "OrgBekk", { fg = "#d4ff26" })
+    vim.api.nvim_set_hl(0, "OrgTeoria", { fg = "#b2abf4" })
     vim.api.nvim_set_hl(0, "OrgConfig", { fg = "#54A23D" })
     vim.api.nvim_set_hl(0, "OrgDefault", { fg = "white" })
 

@@ -5,6 +5,10 @@ function M.getProject()
   if project_file_path == "" then
     return nil
   end
+  -- if project_file_path is an array, get the first element of the array
+  if type(project_file_path) == "table" then
+    project_file_path = project_file_path[1]
+  end
   local project_file = dofile(project_file_path)
 
   return project_file

@@ -18,7 +18,7 @@ M.org_mapper = {
   ["personal"] = "\u{f415} Personal",
   ["bekk"] = "\u{f491} Bekk",
   [".config"] = "\u{e615} Config",
-  ["teoria"] = "\u{f187} Teoria",
+  ["teoria"] = "\u{f0b01} Teoria",
   ["etc"] = "\u{f313} NixOS",
   default = "\u{f128} UNKNOWN",
 }

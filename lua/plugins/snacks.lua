@@ -58,11 +58,21 @@ return {
       sections = {
         { section = "header" },
         {
-          section = "terminal",
+          text = {
+            os.date("%a %d. %b %Y"),
+            hl = "Comment",
+          },
           align = "center",
-          cmd = 'bash -c \'printf "%*s\n" $(( ($(tput cols) + 5) / 2 )) "$(date +"%H:%M")"; printf "%*s\n" $(( ($(tput cols) + 16) / 2 )) "$(date +"%A %d. %B %Y")"\'',
+          padding = 1,
+        },
+        {
+          section = "terminal",
+          cmd = "date +'%H:%M' | figlet -d /opt/homebrew/Cellar/toilet/0.3/share/figlet -f miniwi -c -w 60",
+          hl = "QuickFixLine",
+          padding = 1,
           height = 4,
-          gap = 1,
+          width = 60,
+          align = "center",
         },
         { section = "keys", gap = 1, padding = 1 },
         { section = "startup" },

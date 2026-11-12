@@ -32,17 +32,24 @@ vim.api.nvim_create_autocmd("DirChanged", {
     local utils = require("config.utils")
     local project = utils.getProject()
     -- if project is nil then set colors to NONE
-    if not project then
+    if not project or not project.colors then
       vim.fn.system("kitten @ set-tab-color " .. "active_bg=NONE " .. "inactive_bg=NONE ")
       return
     end
+    local allowed = { active_bg = true, active_fg = true, inactive_bg = true, inactive_fg = true }
 
     -- Extract the color values
-    local active_bg = project.active_tab_color or "NONE"
-    local inactive_bg = project.inactive_tab_color or active_bg
+    local args = { "kitten", "@", "set-tab-color" }
+    for key, value in pairs(project.colors) do
+      if allowed[key] then
+        table.insert(args, key .. "=" .. tostring(value))
+      else
+        vim.notify("Ignoring invalid color key: " .. key, vim.log.levels.WARN)
+      end
+    end
 
     -- Set the kitten values
-    vim.fn.system("kitten @ set-tab-color " .. "active_bg=" .. active_bg .. " inactive_bg=" .. inactive_bg)
+    vim.fn.system(args)
   end,
 })
 
